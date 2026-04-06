@@ -1,6 +1,17 @@
-#meta
+---
+name: "Library/Dklawren/Todoist"
+tags: meta/library
+---
+
+## Todoist
+
 You need to add a developer API key value to able to access your Todoist data.
 You can get one at <https://app.todoist.com/app/settings/integrations/developer>.
+
+### Example Config
+```lua
+config.set('todoistToken', 'developer_api_key_here')
+```
 
 ### Templates
 

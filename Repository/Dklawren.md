@@ -1,5 +1,4 @@
 ---
-name: "Repository/Dklawren Repo"
 tags: meta/repository
 ---
 
@@ -9,7 +8,10 @@ name: "Reminders for SilverBullet"
 uri: github:dklawren/silverbullet-libraries/Reminders.md
 website: https://github.com/dklawren/silverbullet-libraries/blob/main/Reminders.md
 description: "Add Reminders for tasks in Silverbullet using either native notifications or using the ntfy.sh service."
----
+```
+
+## Productivity Tools
+```#meta/library/remote
 name: "Todoist for Silverbullet"
 uri: github:dklawren/silverbullet-libraries/Todoist.md
 website: https://github.com/dklawren/silverbullet-libraries/blob/main/Todoist.md

@@ -1,11 +1,8 @@
 ---
-name: "Library/Custom/Reminders"
+name: "Library/Dklawren/Reminders"
 tags: meta/library
 files:
   - RemindersNotify.js
-share.uri: "github:dklawren/silverbullet-libraries/Reminders.md"
-share.hash:
-share.mode: pull
 ---
 
 # Task Reminders
