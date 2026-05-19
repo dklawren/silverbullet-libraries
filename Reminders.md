@@ -4,7 +4,6 @@ tags: meta/library
 files:
   - RemindersNotify.js
 ---
-
 # Task Reminders
 
 Fires browser notifications for tasks that are due today, and optionally sends push notifications via **[ntfy.sh](https://ntfy.sh)** so you get alerted on your phone or other devices even when the browser tab is not in focus.
@@ -141,7 +140,7 @@ browsers require a user gesture. If permission was denied or not yet granted, ru
 local _remindersSent = {}
 
 -- Notification helpers loaded from companion JS module.
-local _notify = js.import("/.fs/Library/Custom/RemindersNotify.js")
+local _notify = js.import("/.fs/Library/Dklawren/RemindersNotify.js")
 
 -- Parse "HH:MM" string into (hour, minute) numbers.
 -- Returns nil, nil if the format is invalid.
