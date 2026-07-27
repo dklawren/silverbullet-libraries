@@ -204,24 +204,25 @@ function Github.getPRs(opts)
   return Github.searchPRs(q)
 end
 
--- Render a live HTML widget showing pull requests.
+-- Build the pull-request table as a bare `dom` node (no widget wrapper),
+-- so it can be embedded inside other widgets (e.g. dashboard grid cards).
 -- Accepts the same opts table as Github.getPRs().
 -- Columns: PR (repo#number + title) | State | Author | Labels | Age
-function Github.getPRsWidget(opts)
+function Github.getPRsDom(opts)
   local prs = nil
   local ok, err = pcall(function()
     prs = Github.getPRs(opts)
   end)
 
   if not ok then
-    return widget.htmlBlock(dom.span {
+    return dom.span {
       class = "github-error",
       "**GitHub error:** " .. tostring(err),
-    })
+    }
   end
 
   if not prs or #prs == 0 then
-    return widget.htmlBlock(dom.span { "_No pull requests found._" })
+    return dom.span { "Nothing right now" }
   end
 
   local rows = {}
@@ -235,7 +236,7 @@ function Github.getPRsWidget(opts)
     })
   end
 
-  return widget.htmlBlock(dom.table {
+  return dom.table {
     class = "github-prs-widget",
     dom.thead {
       dom.tr {
@@ -247,7 +248,13 @@ function Github.getPRsWidget(opts)
       }
     },
     dom.tbody(rows),
-  })
+  }
+end
+
+-- Render a live HTML widget showing pull requests (thin wrapper around
+-- Github.getPRsDom so it can be dropped into a page on its own).
+function Github.getPRsWidget(opts)
+  return widget.htmlBlock(Github.getPRsDom(opts))
 end
 ```
 
