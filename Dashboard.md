@@ -1,7 +1,6 @@
 ---
 name: "Library/Dklawren/Dashboard"
 tags: meta/library
-share.uri: "github:dklawren/silverbullet-libraries/Dashboard.md"
 ---
 
 Small helpers for laying out dashboard pages (e.g. [[Home]]) as a responsive
