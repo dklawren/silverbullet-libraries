@@ -3,6 +3,7 @@ name: "Library/Dklawren/ExportPdf"
 tags: meta/library
 files:
   - ExportPdf.js
+  - html2pdf.bundle.min.js
 ---
 
 # Export Page to PDF
