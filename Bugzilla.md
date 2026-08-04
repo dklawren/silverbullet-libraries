@@ -77,13 +77,9 @@ function Bugzilla.getBugsWidget(search)
   local rows = {}
   for bug in bugs do
     table.insert(rows, dom.tr {
-      dom.td {
-        "**" .. tostring(bug.id) .. "**: " ..
-        (bug.status or "") .. " - " ..
-        "([bug](https://bugzilla.mozilla.org/show_bug.cgi?id=" ..
-        tostring(bug.id) .. ")) " ..
-        (bug.summary or "")
-      }
+      dom.td {"[**" .. tostring(bug.id) .. "**](https://bugzilla.mozilla.org/show_bug.cgi?id=" .. tostring(bug.id) .. ")"},
+      dom.td {"_" .. (bug.status or "") .. "_"},
+      dom.td {(bug.summary or "")}
     })
   end
   if #rows == 0 then
@@ -97,7 +93,9 @@ function Bugzilla.getBugsWidget(search)
     class = "bugzilla-bugs-widget",
     dom.thead {
       dom.tr {
-        dom.td {"Bug"}
+        dom.td {"Bug"},
+        dom.td {"Status"},
+        dom.td {"Summary"},
       }
     },
     dom.tbody(rows)
@@ -134,6 +132,5 @@ table.bugzilla-bugs-widget tbody td:last-child {
 ## Usage Examples
 
 ### Open bugs assigned to you
-```
+
 ${Bugzilla.getBugsWidget("OPEN assignee:dkl@mozilla.com")}
-```
